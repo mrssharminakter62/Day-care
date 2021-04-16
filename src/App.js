@@ -9,6 +9,7 @@ import Home from './Components/Home/Home/Home';
 import AddService from './Components/Admin/AddService/AddService';
 import { createContext } from 'react';
 import { useState } from 'react';
+import Book from './Components/Admin/Book/Book';
 
 
 
@@ -22,8 +23,11 @@ function App() {
         <Route exact path='/'>
           <Home></Home>
         </Route>
-        <Route  path='/'>
+        <Route  path='/addService'>
          <AddService></AddService>
+        </Route>
+        <Route  path='/book'>
+        <Book></Book>
         </Route>
       </Switch>
 

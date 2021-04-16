@@ -5,7 +5,9 @@ import { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../../App';
-import Sidebar from '../../Shared/Sidebar/Sidebar'
+import Sidebar from '../Sidebar/Sidebar';
+import './AddService.css'
+
 
 
 const AddService = () => {
@@ -16,8 +18,9 @@ const AddService = () => {
     const onSubmit = data => {
         const classData = {
           name: data.name,
-          weight:data.weight,
+          age:data.age,
           price: data.price,
+          description:data.description,
           imageURL: imageURL
         };
         const serviceData ={...loggedInUser, ...classData}
@@ -49,40 +52,47 @@ const AddService = () => {
         });
       }
     return (
-       <div className="d-flex justify-content-between">
-           <div className="col-md-4">
-            <Sidebar></Sidebar>
+       <div className="d-flex justify-content-between service-container">
+           <div className="col-md-2">
+             <Sidebar></Sidebar>
            </div>
-           <div>
-             <h3 style={{fontWeight:'bold', marginBottom:'40px'}}>Add Product</h3>
-            <form onSubmit={handleSubmit(onSubmit)}>
+           <div className="col-md-6 service py-5">
+             <h3 style={{fontWeight:'bold', marginBottom:'40px', fontFamily:" 'Courgette', cursive"}}>Add Service</h3>
+            <form className="form-style" onSubmit={handleSubmit(onSubmit)}>
                   <Row>
                           <Col>
-                              <label htmlFor="" style={{fontWeight:'bold'}}>Product Name</label>
+                              <label htmlFor="" style={{fontWeight:'bold'}}>Service Title</label>
                               <br/>
                               <input  name="name" defaultValue="" ref={register}/>
                           </Col>
-                          <Col>
-                                <label htmlFor="" style={{fontWeight:'bold'}}>Add Price</label>
+                          <Col >
+                                <label htmlFor="" style={{fontWeight:'bold'}}>Price</label>
                                 <br/>
-                                <input  name="price" defaultValue="$" ref={register}/>
+                                <input  name="price" defaultValue="" ref={register}/>
+                          </Col>
+                          <Col>
+                                <label htmlFor="" style={{fontWeight:'bold'}}>Age</label>
+                                <br/>
+                                <input  name="age" defaultValue="" ref={register}/>
                           </Col>
                       </Row>
-                      <Row> 
+                      <Row className="mt-5"> 
                           <Col>
-                              <label htmlFor="" style={{fontWeight:'bold'}}>Weight</label>
+                              <label htmlFor="" style={{fontWeight:'bold'}}>Description</label>
                               <br/>
-                              <input  name="weight" defaultValue="Kg" ref={register}/>
+                              {/* <input  name="weight" defaultValue="" ref={register}/> */}
+                              <textarea  name="description" style={{height:"50px"}} ref={register}></textarea>
                           </Col>
                           <Col>
-                            <label htmlFor="" style={{fontWeight:'bold'}}>Add Photo</label>
+                            <label htmlFor="" style={{fontWeight:'bold'}}>Image</label>
                             <br/>
                             <input name="exampleRequired" type="file"  onChange={handleImageUpload}/>
                         </Col>  
                       </Row>
-                      <Button variant="success" className="mt-4" type="submit">Submit</Button>                               
+                      <button className="btn-brand p- mt-3" style={{borderRadius: '5px', width:'150px', color: 'white'}}type="submit">Submit</button>
+                     
             </form>
-</div>  
+          </div>  
        </div>
      
     );
