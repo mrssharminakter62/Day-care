@@ -5,7 +5,7 @@ const Service = (props) => {
 
     return (
      
-        <div class="card" style={{width: '18rem', marginLeft:'30px'}}>
+        <div class="card" style={{width: '18rem', marginLeft:'60px', border:'none'}}>
         <img src={imageURL} className="card-img-top" alt=""/>
         <div className="card-body">
             <h5 className="card-title">{name}</h5>
@@ -21,7 +21,7 @@ const Service = (props) => {
                 <h6 style={{ fontWeight:'bold'}}>{price}</h6>          
             </div> 
         </div> 
-        <button className="btn-brand text-light">Book Now</button>
+        <button className="btn-brand text-light" style={{ borderRadius:'5px'}}>Book Now</button>
     </div>
     );
 };

@@ -12,7 +12,7 @@ const Services = () => {
         .then(data => setServices(data))
     }, [])
     return (
-     <section className="mt-5">
+     <section className="mt-5 pt-5">
         <div className="text-center">
              <h3 className="text-brand" >Our Classes</h3>
             <h2>Learning from playing</h2>

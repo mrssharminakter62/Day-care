@@ -63,30 +63,29 @@ const AddService = () => {
                           <Col>
                               <label htmlFor="" style={{fontWeight:'bold'}}>Service Title</label>
                               <br/>
-                              <input  name="name" defaultValue="" ref={register}/>
+                              <input  name="name" defaultValue="" placeholder="Enter Title"  className="form-control" ref={register}/>
                           </Col>
                           <Col >
                                 <label htmlFor="" style={{fontWeight:'bold'}}>Price</label>
                                 <br/>
-                                <input  name="price" defaultValue="" ref={register}/>
+                                <input  name="price" defaultValue="" placeholder="Enter price"  className="form-control" ref={register}/>
                           </Col>
                           <Col>
                                 <label htmlFor="" style={{fontWeight:'bold'}}>Age</label>
                                 <br/>
-                                <input  name="age" defaultValue="" ref={register}/>
+                                <input  name="age" defaultValue="" placeholder="Enter Age" className="form-control" ref={register}/>
                           </Col>
                       </Row>
                       <Row className="mt-5"> 
                           <Col>
                               <label htmlFor="" style={{fontWeight:'bold'}}>Description</label>
                               <br/>
-                              {/* <input  name="weight" defaultValue="" ref={register}/> */}
-                              <textarea  name="description" style={{height:"50px"}} ref={register}></textarea>
+                              <textarea  name="description" style={{height:"50px"}} placeholder="Enter Description" className="form-control" ref={register}></textarea>
                           </Col>
                           <Col>
                             <label htmlFor="" style={{fontWeight:'bold'}}>Image</label>
                             <br/>
-                            <input name="exampleRequired" type="file"  onChange={handleImageUpload}/>
+                            <input name="exampleRequired" type="file" className="form-control" onChange={handleImageUpload}/>
                         </Col>  
                       </Row>
                       <button className="btn-brand p- mt-3" style={{borderRadius: '5px', width:'150px', color: 'white'}}type="submit">Submit</button>

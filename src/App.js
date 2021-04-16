@@ -10,6 +10,7 @@ import AddService from './Components/Admin/AddService/AddService';
 import { createContext } from 'react';
 import { useState } from 'react';
 import Book from './Components/Admin/Book/Book';
+import Review from './Components/Admin/Review/Review';
 
 
 
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route  path='/book'>
         <Book></Book>
+        </Route>
+        <Route  path='/review'>
+        <Review></Review>
         </Route>
       </Switch>
 
