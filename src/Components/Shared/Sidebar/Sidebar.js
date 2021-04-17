@@ -4,8 +4,25 @@ import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog, faSignOutAlt, faCalendar, faGripHorizontal, faUserPlus, faUsers, faHome } from '@fortawesome/free-solid-svg-icons';
 import {  faFileAlt } from '@fortawesome/free-regular-svg-icons'
+import { useContext } from 'react';
+import { UserContext } from '../../../App';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { getDefaultNormalizer } from '@testing-library/dom';
 
 const Sidebar = () => {
+    const [loggedInUser, setLoggedInUser] =useContext(UserContext);
+    const [adminLevel, setAdminLevel] = useState(false);
+
+    useEffect(()=>{
+        fetch('http://localhost:4400/adminLevel', {
+            method:'POST',
+            headers:{'content-type':'application/json'},
+            body: JSON.stringify({email:loggedInUser.email})
+        })
+        .then(res =>res.json())
+        .then(data => setAdminLevel(data))
+    }, [])
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{height:"100vh"}}>
             <ul className="list-unstyled">
@@ -24,6 +41,7 @@ const Sidebar = () => {
                         <FontAwesomeIcon icon={faCalendar} /> <span >Review</span> 
                     </Link>
                 </li>
+               { adminLevel && <div>
                 <li>
                     <Link to="/order" className="text-white">
                         <FontAwesomeIcon icon={faUsers} /> <span>Order list</span>
@@ -35,8 +53,8 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/makeAdmin" className="text-white" >
-                        <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
+                    <Link to="/admin" className="text-white" >
+                        <FontAwesomeIcon icon={faUserPlus} /> <span> Admin</span>
                     </Link>
                 </li>
                  
@@ -45,6 +63,9 @@ const Sidebar = () => {
                       <FontAwesomeIcon icon={faCog} /> <span>Manage Service</span>
                     </Link>
                 </li>
+               </div>
+
+               }
             </ul>
             <div>
                 <Link to="/" className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>

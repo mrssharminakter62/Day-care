@@ -31,7 +31,7 @@ const AddService = () => {
           headers: {
             'content-type': 'application/json'
           },
-          body: JSON.stringify(serviceData)
+          body: JSON.stringify({serviceData, email: loggedInUser.email})
         })
         .then(res => console.log('server side response', res))
       };

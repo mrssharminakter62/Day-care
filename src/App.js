@@ -12,6 +12,7 @@ import Book from './Components/Book/Book/Book';
 import Review from './Components/Book/Review/Review';
 import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Admin from './Components/Admin/Admin/Admin';
 
 
 
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <PrivateRoute  path='/service/:id'>
         <Book></Book>
+        </PrivateRoute>
+        <PrivateRoute  path='/admin'>
+          <Admin></Admin>
         </PrivateRoute>
         <PrivateRoute  path='/addService'>
         <AddService></AddService>

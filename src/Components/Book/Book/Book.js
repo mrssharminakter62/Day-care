@@ -33,7 +33,7 @@ const handlePayment = paymentId =>{
       paymentId, 
       orderTime: new Date()};
    
-    fetch('http://localhost:4400/addOder',{
+    fetch('http://localhost:4400/addOrder',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -56,24 +56,24 @@ const handlePayment = paymentId =>{
             <div className="col-md-4">
                 <Sidebar></Sidebar>
             </div>
-        <div style={{display: shippingData ? 'none' : 'block'}} className="col-md-6 mt-5">
-             <form className="form-style"
-                onSubmit={handleSubmit(onSubmit)}
-                >
-                
-                <input  name="name" defaultValue={loggedInUser.name}  className="form-control" ref={register}/>
-                <br/>
-                <input  name="company" defaultValue={loggedInUser.email}  className="form-control" ref={register}/>
-                <br/>
-                <input  name="company" defaultValue={name} className="form-control" ref={register}/>
-                <br/>
-                <button className="btn-brand  p- mt-3" style={{borderRadius: '5px', width:'150px', color: 'white'}}type="submit">Submit</button>      
-            </form>
- </div>
- <div style={{display: shippingData ? 'block' : 'none'}} className="mt-5 w-100">
-     <h2>Please pay your payment</h2>
-     <PaymentProcess></PaymentProcess>
- </div>
+             <div style={{display: shippingData ? 'none' : 'block'}} className="col-md-6 mt-5">
+                    <form className="form-style"
+                        onSubmit={handleSubmit(onSubmit)}
+                        >
+                        
+                        <input  name="name" defaultValue={loggedInUser.name}  className="form-control" ref={register}/>
+                        <br/>
+                        <input  name="company" defaultValue={loggedInUser.email}  className="form-control" ref={register}/>
+                        <br/>
+                        <input  name="company" defaultValue={name} className="form-control" ref={register}/>
+                        <br/>
+                        <button className="btn-brand  p- mt-3" style={{borderRadius: '5px', width:'150px', color: 'white'}}type="submit">Submit</button>      
+                    </form>
+                </div>
+            <div style={{display: shippingData ? 'block' : 'none'}} className="mt-5 col-md-6  w-50">
+                <h2>Please pay your payment</h2>
+                <PaymentProcess handlePayment={handlePayment}></PaymentProcess>
+            </div>
     
 
       

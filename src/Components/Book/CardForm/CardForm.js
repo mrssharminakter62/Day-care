@@ -3,7 +3,7 @@ import React from 'react';
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import { useState } from 'react';
 
-const CardForm = () => {
+const CardForm = ({handlePayment}) => {
   const stripe = useStripe();
   const elements = useElements();
   const [paymentError,  setPaymentError] = useState(null)
@@ -23,11 +23,12 @@ const CardForm = () => {
     });
 
     if (error) {
-      setPaymentError(error.message)
-      setPaymentSuccess(null)
+      setPaymentError(error.message);
+      setPaymentSuccess(null);
     } else {
-        setPaymentSuccess(paymentMethod.id)
-        setPaymentError(null)
+        setPaymentSuccess(paymentMethod.id);
+        setPaymentError(null);
+        handlePayment(paymentMethod.id)
     }
   };
 
