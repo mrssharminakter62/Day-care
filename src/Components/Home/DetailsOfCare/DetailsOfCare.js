@@ -3,6 +3,7 @@ import InfoCard from '../InfoCard/InfoCard';
 import { faClock, faMapMarker, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 
+
 const DetailsOfCare = () => {
     const infoData = [
         {
@@ -27,8 +28,8 @@ const DetailsOfCare = () => {
         ]
         
     return (
-        <section className="d-flex justify-content-center">
-        <div className="w-75 row">
+        <section className=" d-flex justify-content-center">
+        <div className="details w-75 row">
         {
               infoData.map(info => <InfoCard info={info}></InfoCard>)
           }
