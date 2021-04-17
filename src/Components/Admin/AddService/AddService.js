@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../../App';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../../Shared/Sidebar/Sidebar';
 import './AddService.css'
 
 
@@ -88,7 +88,7 @@ const AddService = () => {
                             <input name="exampleRequired" type="file" className="form-control" onChange={handleImageUpload}/>
                         </Col>  
                       </Row>
-                      <button className="btn-brand p- mt-3" style={{borderRadius: '5px', width:'150px', color: 'white'}}type="submit">Submit</button>
+                      <button className="btn-brand p-1 mt-3" style={{borderRadius: '5px', width:'150px', color: 'white'}}type="submit">Submit</button>
                      
             </form>
           </div>  

@@ -1,7 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 
 const Service = (props) => {
-    const {name, age, price, imageURL} = props.service;
+    const {name, age, price, imageURL, _id} = props.service;
+
+    const history = useHistory();
+
+    const handleClick = (id) => {
+        const url = `service/${id}`
+        history.push(url);
+    }
 
     return (
      
@@ -21,7 +29,7 @@ const Service = (props) => {
                 <h6 style={{ fontWeight:'bold'}}>{price}</h6>          
             </div> 
         </div> 
-        <button className="btn-brand text-light" style={{ borderRadius:'5px'}}>Book Now</button>
+        <button onClick={()=>handleClick(_id)} className="btn-brand text-light" style={{ borderRadius:'5px'}}>Book Now</button>
     </div>
     );
 };

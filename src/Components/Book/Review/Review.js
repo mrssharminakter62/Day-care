@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../../App';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../../Shared/Sidebar/Sidebar';
 
 const Review = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);

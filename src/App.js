@@ -2,15 +2,16 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Home from './Components/Home/Home/Home';
 import AddService from './Components/Admin/AddService/AddService';
 import { createContext } from 'react';
 import { useState } from 'react';
-import Book from './Components/Admin/Book/Book';
-import Review from './Components/Admin/Review/Review';
+import Book from './Components/Book/Book/Book';
+import Review from './Components/Book/Review/Review';
+import Login from './Components/Login/Login';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 
@@ -24,15 +25,18 @@ function App() {
         <Route exact path='/'>
           <Home></Home>
         </Route>
-        <Route  path='/addService'>
-         <AddService></AddService>
-        </Route>
-        <Route  path='/book'>
-        <Book></Book>
+        <Route path='/login'>
+          <Login></Login>
         </Route>
         <Route  path='/review'>
-        <Review></Review>
+         <Review></Review>
         </Route>
+        <PrivateRoute  path='/service/:id'>
+        <Book></Book>
+        </PrivateRoute>
+        <PrivateRoute  path='/addService'>
+        <AddService></AddService>
+        </PrivateRoute>
       </Switch>
 
     </Router>
