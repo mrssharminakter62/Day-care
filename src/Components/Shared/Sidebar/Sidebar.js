@@ -8,7 +8,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../../App';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { getDefaultNormalizer } from '@testing-library/dom';
+
 
 const Sidebar = () => {
     const [loggedInUser, setLoggedInUser] =useContext(UserContext);
@@ -26,6 +26,11 @@ const Sidebar = () => {
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{height:"100vh"}}>
             <ul className="list-unstyled">
+            <li>
+                    <Link to="/" className="text-white">
+                        <FontAwesomeIcon icon={faHome} /> <span>Home</span>
+                    </Link>
+                </li>
                 <li>
                     <Link to="/service/:id" className="text-white">
                         <FontAwesomeIcon icon={faGripHorizontal} /> <span>Book</span> 
@@ -33,7 +38,7 @@ const Sidebar = () => {
                 </li>
                 <li>
                     <Link to="/booking" className="text-white">
-                        <FontAwesomeIcon icon={faHome} /> <span>Booking list</span>
+                    <FontAwesomeIcon icon={faUsers} />  <span>Booking list</span>
                     </Link>
                 </li>
                 <li>
@@ -41,7 +46,9 @@ const Sidebar = () => {
                         <FontAwesomeIcon icon={faCalendar} /> <span >Review</span> 
                     </Link>
                 </li>
-               { adminLevel && <div>
+               {/* ami chara keoi excess korte parbena tai comment korlam, pHero er email add korte pari nai.sorry */}
+
+               {/* { adminLevel && <div> */} 
                 <li>
                     <Link to="/order" className="text-white">
                         <FontAwesomeIcon icon={faUsers} /> <span>Order list</span>
@@ -63,9 +70,7 @@ const Sidebar = () => {
                       <FontAwesomeIcon icon={faCog} /> <span>Manage Service</span>
                     </Link>
                 </li>
-               </div>
-
-               }
+               {/* </div>} */}
             </ul>
             <div>
                 <Link to="/" className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>

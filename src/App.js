@@ -13,6 +13,8 @@ import Review from './Components/Book/Review/Review';
 import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Admin from './Components/Admin/Admin/Admin';
+import OrderList from './Components/Admin/OrderList/OrderList';
+import BookingList from './Components/Book/BookingList/BookingList';
 
 
 
@@ -32,6 +34,9 @@ function App() {
         <Route  path='/review'>
          <Review></Review>
         </Route>
+        <Route path='/booking'>
+          <BookingList></BookingList>
+        </Route>
         <PrivateRoute  path='/service/:id'>
         <Book></Book>
         </PrivateRoute>
@@ -40,6 +45,9 @@ function App() {
         </PrivateRoute>
         <PrivateRoute  path='/addService'>
         <AddService></AddService>
+        </PrivateRoute>
+        <PrivateRoute path='/order'>
+          <OrderList></OrderList>
         </PrivateRoute>
       </Switch>
 
