@@ -28,11 +28,13 @@ const Admin = () => {
                 <Sidebar></Sidebar>
             </div>
             <div className="col-md-6" style={{marginLeft:'300px'}}>
-            <form onSubmit={handleSubmit(onSubmit)}>
+                <div>
+                <form onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="exampleInputEmail1">Email</label>
                         <input type="email" className="form-control" name="email" placeholder="Enter email"  ref={register} />
                         <button className="btn-brand  p- mt-3" style={{borderRadius: '5px', width:'150px', color: 'white'}} type="submit">Submit</button>
-                    </form>
+                </form>
+                </div>
             </div>
         </div>
     );

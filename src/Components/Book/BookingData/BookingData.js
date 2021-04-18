@@ -6,7 +6,7 @@ const BookingData = ({orders}) => {
             
             {
                 orders.map(order => <div style={{margin:'5px', width:'30%'}}>   <h5>{order.book.name}</h5>  
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, architecto</p></div>)
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, architecto</p></div>)
             }
        
         </div>

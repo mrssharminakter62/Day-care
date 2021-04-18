@@ -20,8 +20,8 @@ const BookingList = () => {
             <div className="col-md-6">
             
             <div className="col-md-8 p-4 pr-5 ml-5 " style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
-                <h5 className="text-brand mb-5">All Orders</h5>
-                <BookingData orders={orders}></BookingData>
+                <h5 className="text-brand fs-2 mb-5" style={{borderBottom:'2px solid black', width:'100px'}}> Orders</h5>
+                <BookingData orders={orders} key={orders._id}></BookingData>
        
         </div>
             </div>

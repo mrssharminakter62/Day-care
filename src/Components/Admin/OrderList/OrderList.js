@@ -15,8 +15,8 @@ const OrderList = () => {
         <div>
           <div className="container-fluid row " >
             <Sidebar></Sidebar>
-            <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
-                <h5 className="text-brand">All Orders</h5>
+            <div className="col-md-9 p-4 pr-5 ml-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+                <h5 className="text-brand text-center mt-5 mb-5">All Orders</h5>
                 <OrdersDataTable orders={orders}></OrdersDataTable>
             </div>
         </div>

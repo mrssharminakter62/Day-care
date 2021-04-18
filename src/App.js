@@ -15,6 +15,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Admin from './Components/Admin/Admin/Admin';
 import OrderList from './Components/Admin/OrderList/OrderList';
 import BookingList from './Components/Book/BookingList/BookingList';
+import ManageService from './Components/Admin/ManageService/ManageService';
 
 
 
@@ -48,6 +49,9 @@ function App() {
         </PrivateRoute>
         <PrivateRoute path='/order'>
           <OrderList></OrderList>
+        </PrivateRoute>
+        <PrivateRoute path='/manageService'>
+          <ManageService></ManageService>
         </PrivateRoute>
       </Switch>
 
