@@ -16,7 +16,7 @@ const Review = () => {
           description:data.description
         };
         const serviceData ={...loggedInUser, ...classData}
-        const url = `http://localhost:4400/addReview`;
+        const url = `https://calm-tundra-70873.herokuapp.com/addReview`;
         
         fetch(url, {
           method: 'POST', 

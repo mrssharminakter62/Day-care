@@ -24,7 +24,7 @@ const AddService = () => {
           imageURL: imageURL
         };
         const serviceData ={...loggedInUser, ...classData}
-        const url = `http://localhost:4400/addService`;
+        const url = `https://calm-tundra-70873.herokuapp.com/addService`;
         
         fetch(url, {
           method: 'POST', 

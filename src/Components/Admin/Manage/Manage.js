@@ -3,7 +3,7 @@ import React from 'react';
 const Manage = ({services}) => {
 
     const handleClick =(id)=>{
-        fetch(`http://localhost:4400/delete/${id}`,{
+        fetch(`https://calm-tundra-70873.herokuapp.com/delete/${id}`,{
             method:'DELETE'
         })
         .then(res => res.json())

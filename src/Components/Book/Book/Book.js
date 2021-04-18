@@ -16,7 +16,7 @@ const Book = () => {
     const {name, age} = book;
 
 useEffect(()=>{
-  fetch(`http://localhost:4400/service/${id}`)
+  fetch(`https://calm-tundra-70873.herokuapp.com/service/${id}`)
     .then(res => res.json())
     .then(data =>setBook(data))
 }, [])
@@ -33,7 +33,7 @@ const handlePayment = paymentId =>{
       paymentId, 
       orderTime: new Date()};
    
-    fetch('http://localhost:4400/addOrder',{
+    fetch('https://calm-tundra-70873.herokuapp.com/addOrder',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'

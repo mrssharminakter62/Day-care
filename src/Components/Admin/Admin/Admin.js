@@ -12,7 +12,7 @@ const Admin = () => {
            email: data.email
           };
           
-          fetch('http://localhost:4400/addAdmin', {
+          fetch('https://calm-tundra-70873.herokuapp.com/addAdmin', {
             method: 'POST', 
             headers: {
               'content-type': 'application/json'

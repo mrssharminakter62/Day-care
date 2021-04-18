@@ -15,7 +15,7 @@ const Sidebar = () => {
     const [adminLevel, setAdminLevel] = useState(false);
 
     useEffect(()=>{
-        fetch('http://localhost:4400/adminLevel', {
+        fetch('https://calm-tundra-70873.herokuapp.com/adminLevel', {
             method:'POST',
             headers:{'content-type':'application/json'},
             body: JSON.stringify({email:loggedInUser.email})
